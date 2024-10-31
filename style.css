@@ -25,10 +25,21 @@ body {
 	margin: 14px 0;
 }
 
+.container-select{
+	max-width: 480px;
+	margin: 20px 0;
+}
+
 .container-input span{
 	color: white;
 	font-size: 22px;
 }
+
+.container-select span{
+	color: white;
+	font-size: 17px;
+}
+
 
 .slider{
 	-webkit-appearance: none;
@@ -107,4 +118,14 @@ body {
 	visibility: visible;
 	bottom: 50px;
 	opacity: 1;
+}
+
+.select{
+	-webkit-appearance: none;
+	width: 20%;
+	border-radius: 5px;
+	background: #dfdfdf;
+	height: 18px;
+	outline: none;
+	margin-top: 8px;
 }
