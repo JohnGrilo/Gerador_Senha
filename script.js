@@ -7,8 +7,33 @@ let password = document.querySelector("#password");
 
 let containerPassword = document.querySelector("#container-password");
 
-let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%*(){}[]<>,.?;:^~|'";
+const selectElement = document.getElementById('passwordType');
+
+let charset = "";
 let novaSenha = "";
+
+    // Adiciona um evento change ao select
+    selectElement.addEventListener('change', function() {
+        // Obtém o valor selecionado
+        const selectedValue = selectElement.value;
+        console.log('Tipo de senha selecionado:', selectedValue);
+
+    });
+
+    switch (selectedValue){
+
+        case 1:
+            novaSenha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%*(){}[]<>,.?;:^~|'";
+            break
+
+        case 2:
+            novaSenha = "0123456789";
+            break
+
+        case 3:
+            novaSenha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            break    
+    }
 
 sizePassword.innerHTML = sliderElment.value;
 
