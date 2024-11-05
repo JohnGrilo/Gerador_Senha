@@ -9,8 +9,9 @@ let containerPassword = document.querySelector("#container-password");
 
 const selectElement = document.getElementById('passwordType');
 
-let charset = "";
+let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%*(){}[]<>,.?;:^~|'";
 let novaSenha = "";
+
 
     // Adiciona um evento change ao select
     selectElement.addEventListener('change', function() {
@@ -18,26 +19,31 @@ let novaSenha = "";
         const selectedValue = selectElement.value;
         console.log('Tipo de senha selecionado:', selectedValue);
 
+        switch (parseInt(selectedValue)){
+
+            case 1:
+                charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%*(){}[]<>,.?;:^~|'";
+                break
+    
+            case 2:
+                charset = "0123456789";
+                break
+    
+            case 3:
+                charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                break  
+                
+            default:
+                charset = "";    
+        }
+
     });
 
-    switch (selectedValue){
 
-        case 1:
-            novaSenha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%*(){}[]<>,.?;:^~|'";
-            break
-
-        case 2:
-            novaSenha = "0123456789";
-            break
-
-        case 3:
-            novaSenha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            break    
-    }
 
 sizePassword.innerHTML = sliderElment.value;
 
-slider.oninput = function(){
+sliderElment.oninput = function(){
     sizePassword.innerHTML = this.value;
 }
 
